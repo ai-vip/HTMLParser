@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.parse.mapper.ListItemInfoMapper">
+
+<select id="getListItemInfo" parameterType="String" resultType="ListItemInfo">
+		select * from list_item_info where item_url = #{id}
+	</select>
+
+	<insert id="saveListItemInfo1" parameterType="ListItemInfo">
+		insert ignore  into list_item_info(
+		image_url,title,item_url,star,comment_count,avg_price,type,area,detailed_address, flavor_score,envirment_score,service_score
+		)
+		values(#{imageUrl},#{title},#{itemUrl},#{star},#{commentCount},#{avgPrice},#{type},#{area},#{detailedAddress},#{flavorScore},#{envirmentScore},#{serviceScore}
+		)
+	</insert>
+	<insert id="saveListItemInfo" parameterType="ListItemInfo">
+		insert ignore  into list_item_info(
+		image_url,title,item_url,star,comment_count,avg_price,type,area,detailed_address, flavor_score,envirment_score,service_score
+		)
+		values(#{imageUrl},#{title},#{itemUrl},#{star},#{commentCount},#{avgPrice},#{type},#{area},#{detailedAddress},#{flavorScore},#{envirmentScore},#{serviceScore}
+		)
+	</insert>
+
+</mapper>
